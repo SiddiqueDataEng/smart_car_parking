@@ -1,0 +1,36 @@
+users:
+  - username: "superadmin"
+    password: "admin123"
+    role: "Super Admin"
+    name: "Ahmed Khan"
+    email: "ahmed.khan@smartparking.pk"
+    customer_id: null
+
+  - username: "manager"
+    password: "manager123"
+    role: "Location Manager"
+    name: "Fatima Malik"
+    email: "fatima.malik@smartparking.pk"
+    location_id: "LOC-001"
+    customer_id: null
+
+  - username: "analyst"
+    password: "analyst123"
+    role: "Data Analyst"
+    name: "Usman Raza"
+    email: "usman.raza@smartparking.pk"
+    customer_id: null
+
+  - username: "customer"
+    password: "customer123"
+    role: "Customer"
+    name: "Zainab Sheikh"
+    email: "zainab.sheikh@gmail.com"
+    customer_id: "CUST-00001"
+
+  - username: "customer2"
+    password: "pass123"
+    role: "Customer"
+    name: "Ali Hassan"
+    email: "ali.hassan@gmail.com"
+    customer_id: "CUST-00002"
