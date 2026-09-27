@@ -1,0 +1,841 @@
+{
+  "silver_locations": {
+    "name": "silver_locations",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_locations.parquet",
+    "row_count": 52,
+    "schema": {
+      "location_id": "object",
+      "location_name": "object",
+      "city": "object",
+      "province": "object",
+      "neighborhood": "object",
+      "zone_type": "object",
+      "total_slots": "int32",
+      "floors": "int32",
+      "has_anpr": "bool",
+      "has_ev_charging": "bool",
+      "has_valet": "bool",
+      "is_covered": "bool",
+      "hourly_rate_pkr": "float64",
+      "monthly_pass_pkr": "float64",
+      "latitude": "float64",
+      "longitude": "float64",
+      "opening_hour": "int64",
+      "closing_hour": "int64",
+      "created_at": "datetime64[us]"
+    },
+    "source_datasets": [
+      "locations"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:22.268530"
+  },
+  "silver_vehicles": {
+    "name": "silver_vehicles",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_vehicles.parquet",
+    "row_count": 30000,
+    "schema": {
+      "vehicle_id": "object",
+      "plate_number": "object",
+      "vehicle_type": "object",
+      "color": "object",
+      "make_year": "int64",
+      "is_blacklisted": "bool",
+      "base_rate_pkr": "int64",
+      "registered_city": "object"
+    },
+    "source_datasets": [
+      "vehicles"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:22.336636"
+  },
+  "silver_customers": {
+    "name": "silver_customers",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_customers.parquet",
+    "row_count": 15000,
+    "schema": {
+      "customer_id": "object",
+      "full_name": "object",
+      "cnic": "object",
+      "phone": "object",
+      "email": "object",
+      "city": "object",
+      "gender": "object",
+      "age": "int32",
+      "has_season_pass": "bool",
+      "season_pass_expiry": "object",
+      "loyalty_points": "int32",
+      "preferred_payment": "object",
+      "registration_date": "datetime64[us]"
+    },
+    "source_datasets": [
+      "customers"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:22.388920"
+  },
+  "silver_fact": {
+    "name": "silver_fact",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_fact.parquet",
+    "row_count": 598244,
+    "schema": {
+      "transaction_id": "object",
+      "location_id": "object",
+      "vehicle_id": "object",
+      "customer_id": "object",
+      "slot_id": "object",
+      "entry_time": "datetime64[us]",
+      "exit_time": "datetime64[us]",
+      "duration_minutes": "int64",
+      "fee_pkr": "float64",
+      "payment_method": "object",
+      "vehicle_type": "object",
+      "entry_date": "datetime64[us]",
+      "entry_hour": "int64",
+      "day_of_week": "int64",
+      "entry_month": "int64",
+      "entry_year": "int64",
+      "entry_week": "int64",
+      "location_name": "object",
+      "city": "object",
+      "province": "object",
+      "neighborhood": "object",
+      "zone_type": "object",
+      "total_slots": "int64",
+      "hourly_rate_pkr": "int64",
+      "has_anpr": "bool",
+      "has_valet": "bool",
+      "plate_number": "object",
+      "vehicle_color": "object",
+      "make_year": "int64",
+      "is_blacklisted": "bool",
+      "vehicle_base_rate": "int64",
+      "customer_name": "object",
+      "customer_city": "object",
+      "has_season_pass": "object",
+      "customer_pref_payment": "object",
+      "is_ramadan": "int64",
+      "is_eid": "int64",
+      "is_eid_fitr": "int64",
+      "is_eid_adha": "int64",
+      "is_independence_day": "int64",
+      "is_public_holiday": "int64",
+      "is_monsoon": "int64",
+      "is_jummah": "int64",
+      "is_weekend": "int64"
+    },
+    "source_datasets": [
+      "parking_transactions",
+      "locations",
+      "vehicles",
+      "customers"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:23.779281"
+  },
+  "silver_violations": {
+    "name": "silver_violations",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_violations.parquet",
+    "row_count": 11965,
+    "schema": {
+      "violation_id": "object",
+      "transaction_id": "object",
+      "location_id": "object",
+      "vehicle_id": "object",
+      "violation_type": "object",
+      "violation_time": "datetime64[us]",
+      "fine_pkr": "float64",
+      "fine_paid": "bool",
+      "resolved": "bool"
+    },
+    "source_datasets": [
+      "violations"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:23.886782"
+  },
+  "silver_anpr": {
+    "name": "silver_anpr",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_anpr.parquet",
+    "row_count": 668158,
+    "schema": {
+      "anpr_event_id": "object",
+      "location_id": "object",
+      "transaction_id": "object",
+      "vehicle_id": "object",
+      "camera_id": "object",
+      "event_type": "object",
+      "scan_time": "datetime64[us]",
+      "confidence_score": "float64",
+      "is_blacklisted_hit": "bool",
+      "plate_number": "object"
+    },
+    "source_datasets": [
+      "anpr_events",
+      "vehicles"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:24.745349"
+  },
+  "silver_staff": {
+    "name": "silver_staff",
+    "layer": "Silver",
+    "file_path": "data\\silver\\silver_staff.parquet",
+    "row_count": 65110,
+    "schema": {
+      "shift_id": "object",
+      "location_id": "object",
+      "staff_name": "object",
+      "role": "object",
+      "shift_type": "object",
+      "shift_start": "datetime64[us]",
+      "shift_end": "datetime64[us]",
+      "week_start": "datetime64[us]"
+    },
+    "source_datasets": [
+      "staff_shifts"
+    ],
+    "transformations": [
+      "clean",
+      "deduplicate",
+      "cast_types",
+      "enrich"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:24.861480"
+  },
+  "gold_daily_revenue": {
+    "name": "gold_daily_revenue",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_daily_revenue.parquet",
+    "row_count": 446946,
+    "schema": {
+      "date": "datetime64[us]",
+      "location_id": "object",
+      "city": "object",
+      "province": "object",
+      "zone_type": "object",
+      "payment_method": "object",
+      "vehicle_type": "object",
+      "transaction_count": "int64",
+      "total_revenue_pkr": "float64",
+      "avg_fee_pkr": "float64",
+      "total_duration_minutes": "float64",
+      "avg_duration_minutes": "float64",
+      "is_ramadan": "int64",
+      "is_eid": "int64",
+      "is_monsoon": "int64",
+      "is_public_holiday": "int64",
+      "is_independence_day": "int64"
+    },
+    "source_datasets": [
+      "silver_fact"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.356881"
+  },
+  "gold_hourly_occupancy": {
+    "name": "gold_hourly_occupancy",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_hourly_occupancy.parquet",
+    "row_count": 94790,
+    "schema": {
+      "location_id": "object",
+      "city": "object",
+      "zone_type": "object",
+      "hour_of_day": "int32",
+      "day_of_week": "int32",
+      "month": "int64",
+      "transaction_count": "int64",
+      "total_duration_minutes": "float64",
+      "avg_duration_minutes": "float64",
+      "avg_fee_pkr": "float64",
+      "total_revenue_pkr": "float64",
+      "occupancy_rate_proxy": "float64"
+    },
+    "source_datasets": [
+      "silver_fact"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.423447"
+  },
+  "gold_peak_analysis": {
+    "name": "gold_peak_analysis",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_peak_analysis.parquet",
+    "row_count": 8086,
+    "schema": {
+      "city": "object",
+      "hour_of_day": "int32",
+      "day_of_week": "int32",
+      "is_ramadan": "int64",
+      "is_eid": "int64",
+      "is_monsoon": "int64",
+      "is_public_holiday": "int64",
+      "transaction_count": "int64",
+      "avg_fee_pkr": "float64",
+      "total_revenue_pkr": "float64",
+      "avg_duration_minutes": "float64",
+      "peak_rank_in_city": "int64"
+    },
+    "source_datasets": [
+      "silver_fact"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.461073"
+  },
+  "gold_location_performance": {
+    "name": "gold_location_performance",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_location_performance.parquet",
+    "row_count": 52,
+    "schema": {
+      "location_id": "object",
+      "location_name": "object",
+      "city": "object",
+      "province": "object",
+      "neighborhood": "object",
+      "zone_type": "object",
+      "total_slots": "int64",
+      "hourly_rate_pkr": "int64",
+      "total_transactions": "int64",
+      "total_revenue_pkr": "float64",
+      "avg_fee_pkr": "float64",
+      "avg_duration_minutes": "float64",
+      "unique_vehicles": "int64",
+      "unique_customers": "int64",
+      "first_transaction_date": "datetime64[us]",
+      "last_transaction_date": "datetime64[us]",
+      "violation_count": "int64",
+      "total_fines_pkr": "float64",
+      "daily_utilisation_rate": "float64"
+    },
+    "source_datasets": [
+      "silver_fact",
+      "silver_violations"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.496304"
+  },
+  "gold_customer_rfm": {
+    "name": "gold_customer_rfm",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_customer_rfm.parquet",
+    "row_count": 15000,
+    "schema": {
+      "customer_id": "object",
+      "full_name": "object",
+      "customer_city": "object",
+      "gender": "object",
+      "age": "int32",
+      "has_season_pass": "bool",
+      "preferred_payment": "object",
+      "recency_days": "int64",
+      "frequency": "int64",
+      "monetary_pkr": "float64",
+      "avg_spend_pkr": "float64",
+      "avg_duration_minutes": "float64",
+      "locations_visited": "int64",
+      "first_visit_date": "datetime64[us]",
+      "last_visit_date": "datetime64[us]",
+      "most_used_payment": "object",
+      "most_used_vehicle_type": "object"
+    },
+    "source_datasets": [
+      "silver_fact",
+      "silver_customers"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.549066"
+  },
+  "gold_violation_summary": {
+    "name": "gold_violation_summary",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_violation_summary.parquet",
+    "row_count": 11813,
+    "schema": {
+      "violation_type": "object",
+      "location_id": "object",
+      "city": "object",
+      "zone_type": "object",
+      "violation_hour": "int64",
+      "violation_dow": "int64",
+      "violation_month": "int64",
+      "violation_count": "int64",
+      "total_fines_pkr": "float64",
+      "avg_fine_pkr": "float64",
+      "fines_paid_count": "float64",
+      "resolved_count": "float64"
+    },
+    "source_datasets": [
+      "silver_violations",
+      "silver_fact"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.586990"
+  },
+  "gold_monthly_trends": {
+    "name": "gold_monthly_trends",
+    "layer": "Gold",
+    "file_path": "data\\gold\\gold_monthly_trends.parquet",
+    "row_count": 240,
+    "schema": {
+      "city": "object",
+      "year": "int64",
+      "month": "int64",
+      "transaction_count": "int64",
+      "total_revenue_pkr": "float64",
+      "avg_fee_pkr": "float64",
+      "avg_duration_minutes": "float64",
+      "unique_vehicles": "int64",
+      "unique_customers": "int64",
+      "active_locations": "int64",
+      "prev_month_revenue": "float64",
+      "mom_revenue_growth_pct": "float64"
+    },
+    "source_datasets": [
+      "silver_fact"
+    ],
+    "transformations": [
+      "aggregate",
+      "join",
+      "kpi_compute"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:42:41.619850"
+  },
+  "features_forecast": {
+    "name": "features_forecast",
+    "layer": "Platinum",
+    "file_path": "data\\platinum\\features_forecast.parquet",
+    "row_count": 37959,
+    "schema": {
+      "ds": "datetime64[us]",
+      "location_id": "object",
+      "city": "object",
+      "zone_type": "object",
+      "revenue_pkr": "float64",
+      "transaction_count": "int64",
+      "avg_duration": "float64",
+      "is_ramadan": "int64",
+      "is_eid": "int64",
+      "is_monsoon": "int64",
+      "is_public_holiday": "int64",
+      "is_independence_day": "int64",
+      "day_of_week": "int32",
+      "month": "int32",
+      "week_of_year": "int32",
+      "day_of_year": "int32",
+      "is_weekend": "int32",
+      "dow_sin": "float64",
+      "dow_cos": "float64",
+      "month_sin": "float64",
+      "month_cos": "float64",
+      "lag_1d_revenue": "float64",
+      "lag_7d_revenue": "float64",
+      "lag_30d_revenue": "float64",
+      "roll_7d_avg_rev": "float64",
+      "roll_30d_avg_rev": "float64",
+      "lag_1d_txn": "float64",
+      "lag_7d_txn": "float64",
+      "zone_type_enc": "int8"
+    },
+    "source_datasets": [
+      "silver_fact",
+      "gold_customer_rfm"
+    ],
+    "transformations": [
+      "feature_engineering",
+      "lag_features",
+      "sin_cos_encoding",
+      "categorical_encoding"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:45:45.180991"
+  },
+  "features_clustering": {
+    "name": "features_clustering",
+    "layer": "Platinum",
+    "file_path": "data\\platinum\\features_clustering.parquet",
+    "row_count": 15000,
+    "schema": {
+      "customer_id": "object",
+      "full_name": "object",
+      "customer_city": "object",
+      "gender": "object",
+      "age": "int32",
+      "has_season_pass": "bool",
+      "preferred_payment": "object",
+      "recency_days": "int64",
+      "frequency": "int64",
+      "monetary_pkr": "float64",
+      "avg_spend_pkr": "float64",
+      "avg_duration_minutes": "float64",
+      "locations_visited": "int64",
+      "first_visit_date": "datetime64[us]",
+      "last_visit_date": "datetime64[us]",
+      "most_used_payment": "object",
+      "most_used_vehicle_type": "object",
+      "recency_score": "float64",
+      "frequency_score": "float64",
+      "monetary_score": "float64",
+      "avg_duration_bucket": "float64",
+      "payment_enc": "int8",
+      "vehicle_enc": "int8",
+      "city_enc": "int8",
+      "gender_enc": "int32",
+      "has_season_pass_enc": "int32"
+    },
+    "source_datasets": [
+      "silver_fact",
+      "gold_customer_rfm"
+    ],
+    "transformations": [
+      "feature_engineering",
+      "lag_features",
+      "sin_cos_encoding",
+      "categorical_encoding"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:45:49.010497"
+  },
+  "features_anomaly": {
+    "name": "features_anomaly",
+    "layer": "Platinum",
+    "file_path": "data\\platinum\\features_anomaly.parquet",
+    "row_count": 598244,
+    "schema": {
+      "transaction_id": "object",
+      "location_id": "object",
+      "vehicle_id": "object",
+      "entry_hour": "int64",
+      "day_of_week": "int64",
+      "duration_minutes": "int64",
+      "fee_pkr": "float64",
+      "is_blacklisted": "bool",
+      "is_ramadan": "int64",
+      "is_eid": "int64",
+      "is_monsoon": "int64",
+      "is_weekend": "int64",
+      "fee_zscore": "float64",
+      "dur_zscore": "float64",
+      "is_late_night": "int32",
+      "is_very_short": "int32",
+      "is_very_long": "int32",
+      "location_enc": "int8"
+    },
+    "source_datasets": [
+      "silver_fact",
+      "gold_customer_rfm"
+    ],
+    "transformations": [
+      "feature_engineering",
+      "lag_features",
+      "sin_cos_encoding",
+      "categorical_encoding"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:45:51.195180"
+  },
+  "features_pricing": {
+    "name": "features_pricing",
+    "layer": "Platinum",
+    "file_path": "data\\platinum\\features_pricing.parquet",
+    "row_count": 598244,
+    "schema": {
+      "transaction_id": "object",
+      "location_id": "object",
+      "city": "object",
+      "zone_type": "object",
+      "vehicle_type": "object",
+      "entry_hour": "int64",
+      "day_of_week": "int64",
+      "entry_month": "int64",
+      "duration_minutes": "int64",
+      "actual_fee_pkr": "float64",
+      "hourly_rate_pkr": "int64",
+      "total_slots": "int64",
+      "is_ramadan": "int64",
+      "is_eid": "int64",
+      "is_monsoon": "int64",
+      "is_weekend": "int64",
+      "is_public_holiday": "int64",
+      "is_independence_day": "int64",
+      "concurrent_txns": "int64",
+      "occupancy_rate": "float64",
+      "hour_sin": "float64",
+      "hour_cos": "float64",
+      "vehicle_type_enc": "int8",
+      "zone_type_enc": "int8",
+      "city_enc": "int8"
+    },
+    "source_datasets": [
+      "silver_fact",
+      "gold_customer_rfm"
+    ],
+    "transformations": [
+      "feature_engineering",
+      "lag_features",
+      "sin_cos_encoding",
+      "categorical_encoding"
+    ],
+    "description": "",
+    "last_updated": "2026-09-26T19:45:54.918535"
+  },
+  "locations": {
+    "name": "locations",
+    "layer": "Bronze",
+    "file_path": "data/bronze/locations.parquet",
+    "row_count": 52,
+    "schema": {
+      "location_id": "object",
+      "location_name": "object",
+      "city": "object",
+      "province": "object",
+      "neighborhood": "object",
+      "zone_type": "object",
+      "total_slots": "int64",
+      "floors": "int64",
+      "has_anpr": "bool",
+      "has_ev_charging": "bool",
+      "has_valet": "bool",
+      "is_covered": "bool",
+      "hourly_rate_pkr": "int64",
+      "monthly_pass_pkr": "int64",
+      "latitude": "float64",
+      "longitude": "float64",
+      "opening_hour": "int64",
+      "closing_hour": "int64",
+      "created_at": "object"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw parking location reference data across 10 Pakistani cities",
+    "last_updated": "2026-09-26T20:07:43.831134"
+  },
+  "vehicles": {
+    "name": "vehicles",
+    "layer": "Bronze",
+    "file_path": "data/bronze/vehicles.parquet",
+    "row_count": 30000,
+    "schema": {
+      "vehicle_id": "object",
+      "plate_number": "object",
+      "vehicle_type": "object",
+      "color": "object",
+      "make_year": "int64",
+      "is_blacklisted": "bool",
+      "base_rate_pkr": "int64",
+      "registered_city": "object"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw vehicle registry with Pakistani plate format (ABC-1234)",
+    "last_updated": "2026-09-26T20:07:43.857209"
+  },
+  "customers": {
+    "name": "customers",
+    "layer": "Bronze",
+    "file_path": "data/bronze/customers.parquet",
+    "row_count": 15000,
+    "schema": {
+      "customer_id": "object",
+      "full_name": "object",
+      "cnic": "object",
+      "phone": "object",
+      "email": "object",
+      "city": "object",
+      "gender": "object",
+      "age": "int64",
+      "has_season_pass": "bool",
+      "season_pass_expiry": "object",
+      "loyalty_points": "int64",
+      "preferred_payment": "object",
+      "registration_date": "object"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw customer profiles with CNIC IDs and Pakistani phone numbers",
+    "last_updated": "2026-09-26T20:07:43.882476"
+  },
+  "parking_transactions": {
+    "name": "parking_transactions",
+    "layer": "Bronze",
+    "file_path": "data/bronze/parking_transactions.parquet",
+    "row_count": 598244,
+    "schema": {
+      "transaction_id": "object",
+      "location_id": "object",
+      "vehicle_id": "object",
+      "customer_id": "object",
+      "slot_id": "object",
+      "entry_time": "datetime64[ns]",
+      "exit_time": "datetime64[ns]",
+      "duration_minutes": "int64",
+      "fee_pkr": "float64",
+      "payment_method": "object",
+      "is_season_pass": "bool",
+      "vehicle_type": "object",
+      "entry_date": "object",
+      "entry_hour": "int64",
+      "day_of_week": "int64"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw parking transaction events (~598K rows, 2 years)",
+    "last_updated": "2026-09-26T20:07:44.507563"
+  },
+  "anpr_events": {
+    "name": "anpr_events",
+    "layer": "Bronze",
+    "file_path": "data/bronze/anpr_events.parquet",
+    "row_count": 668158,
+    "schema": {
+      "anpr_event_id": "object",
+      "location_id": "object",
+      "transaction_id": "object",
+      "vehicle_id": "object",
+      "camera_id": "object",
+      "event_type": "object",
+      "scan_time": "datetime64[ns]",
+      "confidence_score": "float64",
+      "is_blacklisted_hit": "bool"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw ANPR plate scan events from cameras",
+    "last_updated": "2026-09-26T20:07:45.114372"
+  },
+  "sensor_events": {
+    "name": "sensor_events",
+    "layer": "Bronze",
+    "file_path": "data/bronze/sensor_events.parquet",
+    "row_count": 310157,
+    "schema": {
+      "sensor_event_id": "object",
+      "slot_id": "object",
+      "location_id": "object",
+      "status": "object",
+      "timestamp": "datetime64[ns]",
+      "battery_pct": "int64"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw slot occupancy sensor pings",
+    "last_updated": "2026-09-26T20:07:45.320379"
+  },
+  "violations": {
+    "name": "violations",
+    "layer": "Bronze",
+    "file_path": "data/bronze/violations.parquet",
+    "row_count": 11965,
+    "schema": {
+      "violation_id": "object",
+      "transaction_id": "object",
+      "location_id": "object",
+      "vehicle_id": "object",
+      "violation_type": "object",
+      "violation_time": "datetime64[ns]",
+      "fine_pkr": "int64",
+      "fine_paid": "bool",
+      "resolved": "bool"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw parking violation records with fines",
+    "last_updated": "2026-09-26T20:07:45.347038"
+  },
+  "staff_shifts": {
+    "name": "staff_shifts",
+    "layer": "Bronze",
+    "file_path": "data/bronze/staff_shifts.parquet",
+    "row_count": 65110,
+    "schema": {
+      "shift_id": "object",
+      "location_id": "object",
+      "staff_name": "object",
+      "role": "object",
+      "shift_type": "object",
+      "shift_start": "datetime64[ns]",
+      "shift_end": "datetime64[ns]",
+      "week_start": "object"
+    },
+    "source_datasets": [],
+    "transformations": [],
+    "description": "Raw staff scheduling records per location",
+    "last_updated": "2026-09-26T20:07:45.384210"
+  }
+}

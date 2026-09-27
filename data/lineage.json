@@ -1,0 +1,67 @@
+{
+  "silver_locations": [
+    "locations"
+  ],
+  "silver_vehicles": [
+    "vehicles"
+  ],
+  "silver_customers": [
+    "customers"
+  ],
+  "silver_fact": [
+    "parking_transactions",
+    "locations",
+    "vehicles",
+    "customers"
+  ],
+  "silver_violations": [
+    "violations"
+  ],
+  "silver_anpr": [
+    "anpr_events",
+    "vehicles"
+  ],
+  "silver_staff": [
+    "staff_shifts"
+  ],
+  "gold_daily_revenue": [
+    "silver_fact"
+  ],
+  "gold_hourly_occupancy": [
+    "silver_fact"
+  ],
+  "gold_peak_analysis": [
+    "silver_fact"
+  ],
+  "gold_location_performance": [
+    "silver_fact",
+    "silver_violations"
+  ],
+  "gold_customer_rfm": [
+    "silver_fact",
+    "silver_customers"
+  ],
+  "gold_violation_summary": [
+    "silver_violations",
+    "silver_fact"
+  ],
+  "gold_monthly_trends": [
+    "silver_fact"
+  ],
+  "features_forecast": [
+    "silver_fact",
+    "gold_customer_rfm"
+  ],
+  "features_clustering": [
+    "silver_fact",
+    "gold_customer_rfm"
+  ],
+  "features_anomaly": [
+    "silver_fact",
+    "gold_customer_rfm"
+  ],
+  "features_pricing": [
+    "silver_fact",
+    "gold_customer_rfm"
+  ]
+}
