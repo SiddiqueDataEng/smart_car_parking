@@ -1,0 +1,111 @@
+{
+  "dataset": "silver_fact",
+  "run_time": "2026-09-26T19:42:16.439450",
+  "total_rows": 598244,
+  "checks_total": 11,
+  "checks_passed": 11,
+  "checks_failed": 0,
+  "critical_failures": 0,
+  "overall_pass": true,
+  "results": [
+    {
+      "check": "not_null",
+      "column": "transaction_id",
+      "critical": true,
+      "passed": true,
+      "message": "No nulls",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "not_null",
+      "column": "location_id",
+      "critical": true,
+      "passed": true,
+      "message": "No nulls",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "not_null",
+      "column": "vehicle_id",
+      "critical": true,
+      "passed": true,
+      "message": "No nulls",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "not_null",
+      "column": "entry_time",
+      "critical": true,
+      "passed": true,
+      "message": "No nulls",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "not_null",
+      "column": "exit_time",
+      "critical": true,
+      "passed": true,
+      "message": "No nulls",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "not_null",
+      "column": "fee_pkr",
+      "critical": true,
+      "passed": true,
+      "message": "No nulls",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "unique",
+      "column": "transaction_id",
+      "critical": true,
+      "passed": true,
+      "message": "All values unique",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "value_range",
+      "column": "duration_minutes",
+      "critical": true,
+      "passed": true,
+      "message": "All values in range [1, 1440]",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "value_range",
+      "column": "fee_pkr",
+      "critical": true,
+      "passed": true,
+      "message": "All values in range [0.001, None]",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "referential_integrity",
+      "column": "location_id",
+      "critical": true,
+      "passed": true,
+      "message": "All references valid",
+      "bad_count": 0,
+      "bad_samples": []
+    },
+    {
+      "check": "referential_integrity",
+      "column": "vehicle_id",
+      "critical": true,
+      "passed": true,
+      "message": "All references valid",
+      "bad_count": 0,
+      "bad_samples": []
+    }
+  ]
+}
