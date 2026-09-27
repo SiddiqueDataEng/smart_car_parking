@@ -1,0 +1,394 @@
+2026-09-26 19:37:59,047 | INFO | generator.main | ============================================================
+2026-09-26 19:37:59,050 | INFO | generator.main | SMART Parking Solutions — Bronze Data Generation
+2026-09-26 19:37:59,052 | INFO | generator.main | ============================================================
+2026-09-26 19:37:59,052 | INFO | generator.main | [1/8] Generating locations...
+2026-09-26 19:37:59,080 | INFO | generator.locations | Generated 52 locations across 10 cities
+2026-09-26 19:37:59,463 | INFO | generator.locations | Saved → D:\smart_car_parking\data\bronze\locations.parquet (52 rows)
+2026-09-26 19:37:59,464 | INFO | generator.main |       ✓ 52 locations
+2026-09-26 19:37:59,464 | INFO | generator.main | [2/8] Generating vehicles...
+2026-09-26 19:37:59,947 | INFO | generator.vehicles | Generated 30000 vehicles | unique plates: 30000
+2026-09-26 19:38:00,021 | INFO | generator.vehicles | Saved → D:\smart_car_parking\data\bronze\vehicles.parquet (30000 rows)
+2026-09-26 19:38:00,023 | INFO | generator.main |       ✓ 30000 vehicles
+2026-09-26 19:38:00,025 | INFO | generator.main | [3/8] Generating customers...
+2026-09-26 19:38:00,423 | INFO | generator.customers | Generated 15000 customers | season-pass: 2982 (19.9%)
+2026-09-26 19:38:00,491 | INFO | generator.customers | Saved → D:\smart_car_parking\data\bronze\customers.parquet (15000 rows)
+2026-09-26 19:38:00,501 | INFO | generator.main |       ✓ 15000 customers
+2026-09-26 19:38:00,504 | INFO | generator.main | [4/8] Generating parking transactions (~500000)...
+2026-09-26 19:38:00,604 | INFO | generator.transactions | Generating ~500000 transactions over 730 days...
+2026-09-26 19:38:13,314 | INFO | generator.transactions |   Progress: 100000 transactions generated
+2026-09-26 19:38:26,470 | INFO | generator.transactions |   Progress: 200000 transactions generated
+2026-09-26 19:38:37,948 | INFO | generator.transactions |   Progress: 300000 transactions generated
+2026-09-26 19:38:49,148 | INFO | generator.transactions |   Progress: 400000 transactions generated
+2026-09-26 19:39:01,185 | INFO | generator.transactions |   Progress: 500000 transactions generated
+2026-09-26 19:39:14,706 | INFO | generator.transactions | Generated 598244 transactions | 121.9 M PKR total revenue
+2026-09-26 19:39:17,021 | INFO | generator.transactions | Saved → D:\smart_car_parking\data\bronze\parking_transactions.parquet (598244 rows, 18.4 MB)
+2026-09-26 19:39:17,063 | INFO | generator.main |       ✓ 598244 transactions
+2026-09-26 19:39:17,106 | INFO | generator.main | [5/8] Generating ANPR events...
+2026-09-26 19:40:30,519 | INFO | generator.events | Generated 668158 ANPR events
+2026-09-26 19:40:31,654 | INFO | generator.events | Saved → D:\smart_car_parking\data\bronze\anpr_events.parquet (668158 rows, 14.2 MB)
+2026-09-26 19:40:31,654 | INFO | generator.main |       ✓ 668158 ANPR events
+2026-09-26 19:40:31,654 | INFO | generator.main | [6/8] Generating sensor events...
+2026-09-26 19:40:41,516 | INFO | generator.events | Generated 310157 sensor events
+2026-09-26 19:40:41,906 | INFO | generator.events | Saved → D:\smart_car_parking\data\bronze\sensor_events.parquet (310157 rows, 5.3 MB)
+2026-09-26 19:40:41,906 | INFO | generator.main |       ✓ 310157 sensor events
+2026-09-26 19:40:41,906 | INFO | generator.main | [7/8] Generating violations...
+2026-09-26 19:40:43,388 | INFO | generator.events | Generated 11965 violations
+2026-09-26 19:40:43,431 | INFO | generator.events | Saved → D:\smart_car_parking\data\bronze\violations.parquet (11965 rows, 0.4 MB)
+2026-09-26 19:40:43,431 | INFO | generator.main |       ✓ 11965 violations
+2026-09-26 19:40:43,432 | INFO | generator.main | [8/8] Generating staff shifts...
+2026-09-26 19:40:44,332 | INFO | generator.events | Generated 65110 staff shift records
+2026-09-26 19:40:44,455 | INFO | generator.events | Saved → D:\smart_car_parking\data\bronze\staff_shifts.parquet (65110 rows, 0.6 MB)
+2026-09-26 19:40:44,455 | INFO | generator.main |       ✓ 65110 shift records
+2026-09-26 19:40:44,457 | INFO | generator.main | ============================================================
+2026-09-26 19:40:44,458 | INFO | generator.main | Bronze generation complete in 165.4 seconds
+2026-09-26 19:40:44,461 | INFO | generator.main | Total Bronze size: 40.3 MB
+2026-09-26 19:40:44,462 | INFO | generator.main | Files in data/bronze/:
+2026-09-26 19:40:45,723 | INFO | generator.main |   anpr_events.parquet                        668158 rows  14.2 MB
+2026-09-26 19:40:45,842 | INFO | generator.main |   customers.parquet                           15000 rows  0.8 MB
+2026-09-26 19:40:45,860 | INFO | generator.main |   locations.parquet                              52 rows  0.0 MB
+2026-09-26 19:40:46,601 | INFO | generator.main |   parking_transactions.parquet               598244 rows  18.4 MB
+2026-09-26 19:40:46,910 | INFO | generator.main |   sensor_events.parquet                      310157 rows  5.3 MB
+2026-09-26 19:40:46,971 | INFO | generator.main |   staff_shifts.parquet                        65110 rows  0.6 MB
+2026-09-26 19:40:47,013 | INFO | generator.main |   vehicles.parquet                            30000 rows  0.6 MB
+2026-09-26 19:40:47,040 | INFO | generator.main |   violations.parquet                          11965 rows  0.4 MB
+2026-09-26 19:40:47,041 | INFO | generator.main | ============================================================
+2026-09-26 19:42:03,699 | INFO | pipeline.bronze_to_silver | ============================================================
+2026-09-26 19:42:03,699 | INFO | pipeline.bronze_to_silver | Bronze → Silver Pipeline
+2026-09-26 19:42:03,699 | INFO | pipeline.bronze_to_silver | ============================================================
+2026-09-26 19:42:03,713 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_locations
+2026-09-26 19:42:03,714 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_vehicles
+2026-09-26 19:42:03,722 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_customers
+2026-09-26 19:42:03,723 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_transactions
+2026-09-26 19:42:03,724 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_violations
+2026-09-26 19:42:03,726 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_anpr
+2026-09-26 19:42:03,728 | INFO | pipeline.bronze_to_silver | Registered Bronze view: bronze_staff
+2026-09-26 19:42:03,728 | INFO | pipeline.bronze_to_silver | Cleaning locations...
+2026-09-26 19:42:03,743 | INFO | pipeline.bronze_to_silver |   Locations: 52 rows
+2026-09-26 19:42:03,743 | INFO | pipeline.bronze_to_silver | Cleaning vehicles...
+2026-09-26 19:42:03,810 | INFO | pipeline.bronze_to_silver |   Vehicles: 30000 rows
+2026-09-26 19:42:03,811 | INFO | pipeline.bronze_to_silver | Cleaning customers...
+2026-09-26 19:42:03,863 | INFO | pipeline.bronze_to_silver |   Customers: 15000 rows
+2026-09-26 19:42:03,865 | INFO | pipeline.bronze_to_silver | Building silver_fact (transactions + locations + vehicles + customers)...
+2026-09-26 19:42:07,725 | INFO | pipeline.bronze_to_silver |   Adding seasonality flags (598244 rows)...
+2026-09-26 19:42:13,965 | INFO | pipeline.bronze_to_silver |   silver_fact: 598244 rows after dedup
+2026-09-26 19:42:14,030 | INFO | pipeline.bronze_to_silver | Cleaning violations...
+2026-09-26 19:42:14,051 | INFO | pipeline.bronze_to_silver |   Violations: 11965 rows
+2026-09-26 19:42:14,052 | INFO | pipeline.bronze_to_silver | Cleaning ANPR events...
+2026-09-26 19:42:15,040 | INFO | pipeline.bronze_to_silver |   ANPR events: 668158 rows
+2026-09-26 19:42:15,069 | INFO | pipeline.bronze_to_silver | Cleaning staff shifts...
+2026-09-26 19:42:15,198 | INFO | pipeline.bronze_to_silver |   Staff shifts: 65110 rows
+2026-09-26 19:42:16,441 | INFO | quality | Quality report [silver_fact] ✅ PASS — 11/11 checks passed, 0 critical failures
+2026-09-26 19:42:16,972 | INFO | pipeline.bronze_to_silver | Written Silver: silver_locations (52 rows)
+2026-09-26 19:42:17,261 | INFO | pipeline.bronze_to_silver | Written Silver: silver_vehicles (30000 rows)
+2026-09-26 19:42:17,515 | INFO | pipeline.bronze_to_silver | Written Silver: silver_customers (15000 rows)
+2026-09-26 19:42:20,918 | INFO | pipeline.bronze_to_silver | Written Silver: silver_fact (598244 rows)
+2026-09-26 19:42:20,949 | INFO | pipeline.bronze_to_silver | Written Silver: silver_violations (11965 rows)
+2026-09-26 19:42:22,137 | INFO | pipeline.bronze_to_silver | Written Silver: silver_anpr (668158 rows)
+2026-09-26 19:42:22,220 | INFO | pipeline.bronze_to_silver | Written Silver: silver_staff (65110 rows)
+2026-09-26 19:42:22,269 | INFO | catalog | Catalog: registered 'silver_locations' (Silver, 52 rows)
+2026-09-26 19:42:22,273 | INFO | catalog | Lineage: silver_locations ← ['locations']
+2026-09-26 19:42:22,337 | INFO | catalog | Catalog: registered 'silver_vehicles' (Silver, 30000 rows)
+2026-09-26 19:42:22,345 | INFO | catalog | Lineage: silver_vehicles ← ['vehicles']
+2026-09-26 19:42:22,399 | INFO | catalog | Catalog: registered 'silver_customers' (Silver, 15000 rows)
+2026-09-26 19:42:22,412 | INFO | catalog | Lineage: silver_customers ← ['customers']
+2026-09-26 19:42:23,780 | INFO | catalog | Catalog: registered 'silver_fact' (Silver, 598244 rows)
+2026-09-26 19:42:23,789 | INFO | catalog | Lineage: silver_fact ← ['parking_transactions', 'locations', 'vehicles', 'customers']
+2026-09-26 19:42:23,889 | INFO | catalog | Catalog: registered 'silver_violations' (Silver, 11965 rows)
+2026-09-26 19:42:23,901 | INFO | catalog | Lineage: silver_violations ← ['violations']
+2026-09-26 19:42:24,746 | INFO | catalog | Catalog: registered 'silver_anpr' (Silver, 668158 rows)
+2026-09-26 19:42:24,757 | INFO | catalog | Lineage: silver_anpr ← ['anpr_events', 'vehicles']
+2026-09-26 19:42:24,862 | INFO | catalog | Catalog: registered 'silver_staff' (Silver, 65110 rows)
+2026-09-26 19:42:24,878 | INFO | catalog | Lineage: silver_staff ← ['staff_shifts']
+2026-09-26 19:42:24,913 | INFO | pipeline.bronze_to_silver | ============================================================
+2026-09-26 19:42:24,919 | INFO | pipeline.bronze_to_silver | Bronze → Silver complete in 21.2 seconds
+2026-09-26 19:42:24,920 | INFO | pipeline.bronze_to_silver | Total Silver size: 45.6 MB
+2026-09-26 19:42:24,930 | INFO | pipeline.bronze_to_silver | ============================================================
+2026-09-26 19:42:35,788 | INFO | pipeline.silver_to_gold | ============================================================
+2026-09-26 19:42:35,788 | INFO | pipeline.silver_to_gold | Silver → Gold Pipeline
+2026-09-26 19:42:35,789 | INFO | pipeline.silver_to_gold | ============================================================
+2026-09-26 19:42:35,800 | INFO | pipeline.silver_to_gold | Registered Silver view: silver_fact
+2026-09-26 19:42:35,802 | INFO | pipeline.silver_to_gold | Registered Silver view: silver_locations
+2026-09-26 19:42:35,803 | INFO | pipeline.silver_to_gold | Registered Silver view: silver_vehicles
+2026-09-26 19:42:35,804 | INFO | pipeline.silver_to_gold | Registered Silver view: silver_customers
+2026-09-26 19:42:35,805 | INFO | pipeline.silver_to_gold | Registered Silver view: silver_violations
+2026-09-26 19:42:35,805 | INFO | pipeline.silver_to_gold | [1/7] Building gold_daily_revenue...
+2026-09-26 19:42:37,669 | INFO | pipeline.silver_to_gold |   gold_daily_revenue: 446946 rows
+2026-09-26 19:42:37,669 | INFO | pipeline.silver_to_gold | [2/7] Building gold_hourly_occupancy...
+2026-09-26 19:42:38,084 | INFO | pipeline.silver_to_gold |   gold_hourly_occupancy: 94790 rows
+2026-09-26 19:42:38,085 | INFO | pipeline.silver_to_gold | [3/7] Building gold_peak_analysis...
+2026-09-26 19:42:38,414 | INFO | pipeline.silver_to_gold |   gold_peak_analysis: 8086 rows
+2026-09-26 19:42:38,415 | INFO | pipeline.silver_to_gold | [4/7] Building gold_location_performance...
+2026-09-26 19:42:39,337 | INFO | pipeline.silver_to_gold |   gold_location_performance: 52 rows
+2026-09-26 19:42:39,337 | INFO | pipeline.silver_to_gold | [5/7] Building gold_customer_rfm...
+2026-09-26 19:42:40,518 | INFO | pipeline.silver_to_gold |   gold_customer_rfm: 15000 rows
+2026-09-26 19:42:40,519 | INFO | pipeline.silver_to_gold | [6/7] Building gold_violation_summary...
+2026-09-26 19:42:40,676 | INFO | pipeline.silver_to_gold |   gold_violation_summary: 11813 rows
+2026-09-26 19:42:40,677 | INFO | pipeline.silver_to_gold | [7/7] Building gold_monthly_trends...
+2026-09-26 19:42:41,117 | INFO | pipeline.silver_to_gold |   gold_monthly_trends: 240 rows
+2026-09-26 19:42:41,358 | INFO | catalog | Catalog: registered 'gold_daily_revenue' (Gold, 446946 rows)
+2026-09-26 19:42:41,370 | INFO | catalog | Lineage: gold_daily_revenue ← ['silver_fact']
+2026-09-26 19:42:41,425 | INFO | catalog | Catalog: registered 'gold_hourly_occupancy' (Gold, 94790 rows)
+2026-09-26 19:42:41,436 | INFO | catalog | Lineage: gold_hourly_occupancy ← ['silver_fact']
+2026-09-26 19:42:41,462 | INFO | catalog | Catalog: registered 'gold_peak_analysis' (Gold, 8086 rows)
+2026-09-26 19:42:41,472 | INFO | catalog | Lineage: gold_peak_analysis ← ['silver_fact']
+2026-09-26 19:42:41,497 | INFO | catalog | Catalog: registered 'gold_location_performance' (Gold, 52 rows)
+2026-09-26 19:42:41,509 | INFO | catalog | Lineage: gold_location_performance ← ['silver_fact', 'silver_violations']
+2026-09-26 19:42:41,551 | INFO | catalog | Catalog: registered 'gold_customer_rfm' (Gold, 15000 rows)
+2026-09-26 19:42:41,562 | INFO | catalog | Lineage: gold_customer_rfm ← ['silver_fact', 'silver_customers']
+2026-09-26 19:42:41,590 | INFO | catalog | Catalog: registered 'gold_violation_summary' (Gold, 11813 rows)
+2026-09-26 19:42:41,598 | INFO | catalog | Lineage: gold_violation_summary ← ['silver_violations', 'silver_fact']
+2026-09-26 19:42:41,621 | INFO | catalog | Catalog: registered 'gold_monthly_trends' (Gold, 240 rows)
+2026-09-26 19:42:41,629 | INFO | catalog | Lineage: gold_monthly_trends ← ['silver_fact']
+2026-09-26 19:42:41,643 | INFO | pipeline.silver_to_gold | ✓ Revenue reconciliation: Silver ≈ Gold (diff 0.000000%)
+2026-09-26 19:42:41,646 | INFO | pipeline.silver_to_gold | Silver → Gold complete in 5.9 seconds
+2026-09-26 19:45:44,331 | INFO | pipeline.gold_to_platinum | ============================================================
+2026-09-26 19:45:44,331 | INFO | pipeline.gold_to_platinum | Gold/Silver → Platinum Feature Store
+2026-09-26 19:45:44,332 | INFO | pipeline.gold_to_platinum | ============================================================
+2026-09-26 19:45:44,347 | INFO | pipeline.gold_to_platinum | [1/5] Building features_forecast...
+2026-09-26 19:45:44,986 | INFO | pipeline.gold_to_platinum |   features_forecast: 37959 rows
+2026-09-26 19:45:45,115 | INFO | pipeline.gold_to_platinum | Written Platinum: features_forecast (37959 rows)
+2026-09-26 19:45:45,183 | INFO | catalog | Catalog: registered 'features_forecast' (Platinum, 37959 rows)
+2026-09-26 19:45:45,192 | INFO | catalog | Lineage: features_forecast ← ['silver_fact', 'gold_customer_rfm']
+2026-09-26 19:45:45,203 | INFO | pipeline.gold_to_platinum |   ✓ No all-null feature columns
+2026-09-26 19:45:45,204 | INFO | pipeline.gold_to_platinum | [2/5] Building features_classification (violation likelihood)...
+2026-09-26 19:45:48,263 | INFO | pipeline.gold_to_platinum |   features_classification: 598244 rows | violations: 11965 (2.0%)
+2026-09-26 19:45:48,698 | ERROR | pipeline.gold_to_platinum | Failed to build features_classification: ("Expected bytes, got a 'int' object", 'Conversion failed for column customer_id with type object')
+2026-09-26 19:45:48,699 | INFO | pipeline.gold_to_platinum | [3/5] Building features_clustering (customer RFM)...
+2026-09-26 19:45:48,781 | INFO | pipeline.gold_to_platinum |   features_clustering: 15000 customers
+2026-09-26 19:45:48,964 | INFO | pipeline.gold_to_platinum | Written Platinum: features_clustering (15000 rows)
+2026-09-26 19:45:49,013 | INFO | catalog | Catalog: registered 'features_clustering' (Platinum, 15000 rows)
+2026-09-26 19:45:49,024 | INFO | catalog | Lineage: features_clustering ← ['silver_fact', 'gold_customer_rfm']
+2026-09-26 19:45:49,033 | INFO | pipeline.gold_to_platinum |   ✓ No all-null feature columns
+2026-09-26 19:45:49,034 | INFO | pipeline.gold_to_platinum | [4/5] Building features_anomaly (Isolation Forest)...
+2026-09-26 19:45:49,985 | INFO | pipeline.gold_to_platinum |   features_anomaly: 598244 rows
+2026-09-26 19:45:50,796 | INFO | pipeline.gold_to_platinum | Written Platinum: features_anomaly (598244 rows)
+2026-09-26 19:45:51,197 | INFO | catalog | Catalog: registered 'features_anomaly' (Platinum, 598244 rows)
+2026-09-26 19:45:51,210 | INFO | catalog | Lineage: features_anomaly ← ['silver_fact', 'gold_customer_rfm']
+2026-09-26 19:45:51,309 | INFO | pipeline.gold_to_platinum |   ✓ No all-null feature columns
+2026-09-26 19:45:51,309 | INFO | pipeline.gold_to_platinum | [5/5] Building features_pricing (dynamic pricing GBM)...
+2026-09-26 19:45:53,517 | INFO | pipeline.gold_to_platinum |   features_pricing: 598244 rows
+2026-09-26 19:45:54,388 | INFO | pipeline.gold_to_platinum | Written Platinum: features_pricing (598244 rows)
+2026-09-26 19:45:54,918 | INFO | catalog | Catalog: registered 'features_pricing' (Platinum, 598244 rows)
+2026-09-26 19:45:54,932 | INFO | catalog | Lineage: features_pricing ← ['silver_fact', 'gold_customer_rfm']
+2026-09-26 19:45:55,079 | INFO | pipeline.gold_to_platinum |   ✓ No all-null feature columns
+2026-09-26 19:45:55,083 | INFO | pipeline.gold_to_platinum | Platinum feature store complete in 10.8 seconds
+2026-09-26 19:49:25,643 | INFO | ml.run_all | ============================================================
+2026-09-26 19:49:25,644 | INFO | ml.run_all | Running all ML models
+2026-09-26 19:49:25,644 | INFO | ml.run_all | ============================================================
+2026-09-26 19:49:25,644 | INFO | ml.run_all | 
+[1/5] Forecasting...
+2026-09-26 19:49:26,835 | INFO | ml.forecasting | ============================================================
+2026-09-26 19:49:26,835 | INFO | ml.forecasting | ML — Revenue Forecasting (Prophet)
+2026-09-26 19:49:26,835 | INFO | ml.forecasting | ============================================================
+2026-09-26 19:49:26,936 | INFO | ml.forecasting | Training Prophet on 52 locations...
+2026-09-26 19:49:26,940 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,945 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,950 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,955 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,959 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,965 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,969 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,973 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,978 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,981 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,985 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,989 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:26,998 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,004 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,009 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,016 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,019 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,028 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,032 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,036 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,042 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,046 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,050 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,054 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,058 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,061 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,066 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,072 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,076 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,080 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,083 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,088 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,091 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,095 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,103 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,106 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,109 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,109 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,120 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,124 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,128 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,132 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,138 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,142 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,146 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,149 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,154 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,159 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,163 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,168 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,172 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,176 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 19:49:27,177 | INFO | ml.forecasting | ============================================================
+2026-09-26 19:49:27,177 | INFO | ml.forecasting | Forecasting complete — 0 models trained in 0.3 s
+2026-09-26 19:49:27,177 | INFO | ml.forecasting | Avg MAPE: 0.0% | Min MAPE: 0.0%
+2026-09-26 19:49:27,178 | INFO | ml.forecasting | ============================================================
+2026-09-26 19:49:27,179 | INFO | ml.run_all | 
+[2/5] Classification...
+2026-09-26 19:49:31,043 | INFO | ml.classification | ============================================================
+2026-09-26 19:49:31,046 | INFO | ml.classification | ML — Classification Models
+2026-09-26 19:49:31,046 | INFO | ml.classification | ============================================================
+2026-09-26 19:49:31,047 | INFO | ml.classification | [1/2] Training Violation Likelihood Classifier (Random Forest)...
+2026-09-26 19:49:31,048 | ERROR | ml.classification | features_classification.parquet not found — run gold_to_platinum first
+2026-09-26 19:49:31,048 | INFO | ml.classification | [2/2] Training Season Pass Churn Predictor (XGBoost)...
+2026-09-26 19:49:31,246 | INFO | ml.classification |   Churn Predictor — F1: 1.0000 | ROC-AUC: 1.0000 | Churn rate: 1.1%
+2026-09-26 19:49:32,436 | INFO | ml.classification |   Model saved → D:\smart_car_parking\src\ml\models\churn_predictor.pkl
+2026-09-26 19:49:32,437 | INFO | ml.classification | Classification models complete in 1.4 s
+2026-09-26 19:49:32,438 | INFO | ml.run_all | 
+[3/5] Clustering...
+2026-09-26 19:49:32,835 | INFO | ml.clustering | ============================================================
+2026-09-26 19:49:32,835 | INFO | ml.clustering | ML — Customer Segmentation (K-Means)
+2026-09-26 19:49:32,836 | INFO | ml.clustering | ============================================================
+2026-09-26 19:49:32,859 | INFO | ml.clustering | Running elbow method (k=2..10)...
+2026-09-26 19:49:33,565 | INFO | ml.clustering |   k=2 | inertia=121661 | silhouette=0.1779
+2026-09-26 19:49:34,269 | INFO | ml.clustering |   k=3 | inertia=105876 | silhouette=0.1982
+2026-09-26 19:49:35,014 | INFO | ml.clustering |   k=4 | inertia=95265 | silhouette=0.2122
+2026-09-26 19:49:35,754 | INFO | ml.clustering |   k=5 | inertia=87110 | silhouette=0.2078
+2026-09-26 19:49:36,510 | INFO | ml.clustering |   k=6 | inertia=81397 | silhouette=0.1789
+2026-09-26 19:49:37,272 | INFO | ml.clustering |   k=7 | inertia=76744 | silhouette=0.1689
+2026-09-26 19:49:38,059 | INFO | ml.clustering |   k=8 | inertia=73137 | silhouette=0.1714
+2026-09-26 19:49:38,878 | INFO | ml.clustering |   k=9 | inertia=70022 | silhouette=0.1683
+2026-09-26 19:49:39,703 | INFO | ml.clustering |   k=10 | inertia=67576 | silhouette=0.1676
+2026-09-26 19:49:39,764 | INFO | ml.clustering | Best k by silhouette: 4 (score=0.2122) → using k=4
+2026-09-26 19:49:39,924 | INFO | ml.clustering | Cluster distribution:
+cluster_id
+3    0.431533
+0    0.394600
+1    0.100067
+2    0.073800
+2026-09-26 19:49:39,924 | INFO | ml.clustering | ✓ All clusters ≥ 1% (min: 7.4%)
+2026-09-26 19:49:41,015 | INFO | ml.clustering | Cluster summary:
+         cluster_name  recency_days  frequency  monetary_pkr
+      Casual Visitors          23.8       29.6        5978.0
+High-Value Corporates          21.1       33.0        6837.0
+       Loyal Regulars          21.3       32.4        5369.2
+  Occasional Spenders          16.7       38.3        8121.2
+2026-09-26 19:49:41,111 | INFO | ml.clustering | Updated features_clustering.parquet with cluster labels
+2026-09-26 19:49:41,114 | INFO | ml.clustering | Model saved → D:\smart_car_parking\src\ml\models\customer_clustering.pkl
+2026-09-26 19:49:41,114 | INFO | ml.clustering | Clustering complete in 8.3 s | k=4 | Silhouette=0.2095
+2026-09-26 19:49:41,120 | INFO | ml.run_all | 
+[4/5] Anomaly Detection...
+2026-09-26 19:49:41,147 | INFO | ml.anomaly | ============================================================
+2026-09-26 19:49:41,147 | INFO | ml.anomaly | ML — Anomaly Detection (Isolation Forest)
+2026-09-26 19:49:41,147 | INFO | ml.anomaly | ============================================================
+2026-09-26 19:50:14,529 | INFO | ml.anomaly | Anomaly detection: 17948 flagged / 598244 total (3.00%)
+2026-09-26 19:50:14,530 | INFO | ml.anomaly | ✓ Flag rate 3.00% within expected range [1%, 5%]
+2026-09-26 19:50:18,898 | INFO | ml.anomaly | Anomaly scores written back to silver_fact.parquet
+2026-09-26 19:50:18,920 | INFO | ml.anomaly | Top 10 anomalies:
+transaction_id  entry_hour  duration_minutes  fee_pkr  is_blacklisted  is_late_night  is_very_short  is_very_long  anomaly_score
+   TXN-0037995          23               663   1105.0            True              1              0             1      -0.769046
+   TXN-0512207           3               697   1162.0           False              1              0             1      -0.764187
+   TXN-0079937           0               690   1150.0           False              1              0             1      -0.763441
+   TXN-0303691           0               710   1183.0            True              1              0             1      -0.762952
+   TXN-0089140           3               683   1139.0           False              1              0             1      -0.762326
+   TXN-0209148           0               622   1037.0           False              1              0             1      -0.761348
+   TXN-0378445          19               720   1500.0            True              0              0             1      -0.759925
+   TXN-0511391          23               720   1200.0           False              1              0             1      -0.759723
+   TXN-0161015          23               676   1352.0           False              1              0             1      -0.759272
+   TXN-0458051           2               720   1440.0           False              1              0             1      -0.759253
+2026-09-26 19:50:19,277 | INFO | ml.anomaly | Model saved → D:\smart_car_parking\src\ml\models\anomaly_detector.pkl
+2026-09-26 19:50:19,280 | INFO | ml.anomaly | Anomaly detection complete in 38.1 s
+2026-09-26 19:50:19,435 | INFO | ml.run_all | 
+[5/5] Dynamic Pricing...
+2026-09-26 19:50:19,468 | INFO | ml.pricing | ============================================================
+2026-09-26 19:50:19,468 | INFO | ml.pricing | ML — Dynamic Pricing (Gradient Boosting)
+2026-09-26 19:50:19,469 | INFO | ml.pricing | ============================================================
+2026-09-26 19:50:20,226 | INFO | ml.pricing | Training GBR on 473810 samples (test: 118453)...
+2026-09-26 19:54:52,895 | INFO | ml.pricing | Pricing Model — RMSE: 4.67 PKR | R²: 0.9989 | MAPE: 1.29%
+2026-09-26 19:54:53,051 | INFO | ml.pricing | Sample pricing scenarios:
+                        scenario  occupancy_rate  entry_hour  recommended_pkr
+0        Ramadan Iftar (90% occ)             0.9          18            184.0
+1      Weekday Morning (30% occ)             0.3          10             60.0
+2  Eid Saturday Night (100% occ)             1.0          20            160.0
+2026-09-26 19:54:53,073 | INFO | ml.pricing | Model saved → D:\smart_car_parking\src\ml\models\dynamic_pricing.pkl
+2026-09-26 19:54:53,074 | INFO | ml.pricing | Dynamic pricing complete in 273.6 s
+2026-09-26 19:54:53,123 | INFO | ml.run_all | ============================================================
+2026-09-26 19:54:53,123 | INFO | ml.run_all | All ML models complete in 327.5 s
+2026-09-26 19:54:53,123 | INFO | ml.run_all | ============================================================
+2026-09-26 20:30:24,357 | INFO | ml.forecasting | ============================================================
+2026-09-26 20:30:24,357 | INFO | ml.forecasting | ML — Revenue Forecasting (Prophet)
+2026-09-26 20:30:24,358 | INFO | ml.forecasting | ============================================================
+2026-09-26 20:30:24,442 | INFO | ml.forecasting | Training Prophet on 52 locations...
+2026-09-26 20:30:24,449 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,453 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,457 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,463 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,467 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,471 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,476 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,481 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,485 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,490 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,493 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,497 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,501 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,505 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,510 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,515 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,519 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,525 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,530 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,534 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,538 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,542 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,546 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,550 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,555 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,560 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,564 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,568 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,574 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,578 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,582 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,586 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,590 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,594 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,598 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,604 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,608 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,612 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,618 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,622 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,627 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,631 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,635 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,639 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,643 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,648 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,654 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,657 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,662 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,666 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,670 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,674 | ERROR | ml.forecasting | Prophet not installed. Run: pip install prophet
+2026-09-26 20:30:24,675 | INFO | ml.forecasting | ============================================================
+2026-09-26 20:30:24,675 | INFO | ml.forecasting | Forecasting complete — 0 models trained in 0.3 s
+2026-09-26 20:30:24,675 | INFO | ml.forecasting | Avg MAPE: 0.0% | Min MAPE: 0.0%
+2026-09-26 20:30:24,676 | INFO | ml.forecasting | ============================================================
+2026-09-27 14:08:39,085 | INFO | ml.forecasting | ============================================================
+2026-09-27 14:08:39,086 | INFO | ml.forecasting | ML — Revenue Forecasting (Prophet)
+2026-09-27 14:08:39,086 | INFO | ml.forecasting | ============================================================
+2026-09-27 14:08:39,493 | INFO | ml.forecasting | Training Prophet on 52 locations...
+2026-09-27 14:08:52,951 | INFO | ml.forecasting |   Trained 10/52 | Avg MAPE: 36.5%
+2026-09-27 14:09:01,671 | INFO | ml.forecasting |   Trained 20/52 | Avg MAPE: 31.6%
+2026-09-27 14:09:10,421 | INFO | ml.forecasting |   Trained 30/52 | Avg MAPE: 31.9%
+2026-09-27 14:09:18,725 | INFO | ml.forecasting |   Trained 40/52 | Avg MAPE: 30.7%
+2026-09-27 14:09:30,482 | INFO | ml.forecasting |   Trained 50/52 | Avg MAPE: 30.6%
+2026-09-27 14:09:36,168 | INFO | ml.forecasting | ============================================================
+2026-09-27 14:09:36,168 | INFO | ml.forecasting | Forecasting complete — 52 models trained in 57.1 s
+2026-09-27 14:09:36,168 | INFO | ml.forecasting | Avg MAPE: 30.7% | Min MAPE: 19.1%
+2026-09-27 14:09:36,169 | INFO | ml.forecasting | ============================================================
